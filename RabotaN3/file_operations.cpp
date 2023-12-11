@@ -8,13 +8,13 @@ void createFile(const std::string& fileName) {
     std::ofstream file(fileName);
 
     if (file.is_open()) {
-        file << "Ïðèâåò, ýòî ñîäåðæèìîå ôàéëà." << std::endl;
-        file << "-5 10 -8 7 -3" << std::endl;  // Ïðèìåð ñîäåðæèìîãî ôàéëà ñ îòðèöàòåëüíûìè ÷èñëàìè
-        std::cout << "Ôàéë " << fileName << " óñïåøíî ñîçäàí." << std::endl;
+        file << "ÐŸÑ€Ð¸Ð²ÐµÑ‚, ÑÑ‚Ð¾ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ñ„Ð°Ð¹Ð»Ð°." << std::endl;
+        file << "-5 10 -8 7 -3" << std::endl;  // ÐŸÑ€Ð¸Ð¼ÐµÑ€ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð° Ñ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸
+        std::cout << "Ð¤Ð°Ð¹Ð» " << fileName << " ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ð·Ð´Ð°Ð½." << std::endl;
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà ïðè ñîçäàíèè ôàéëà." << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°." << std::endl;
     }
 }
 
@@ -23,14 +23,14 @@ void printFile(const std::string& fileName) {
 
     if (file.is_open()) {
         std::string line;
-        std::cout << "Ñîäåðæèìîå ôàéëà " << fileName << ":" << std::endl;
+        std::cout << "Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ñ„Ð°Ð¹Ð»Ð° " << fileName << ":" << std::endl;
         while (std::getline(file, line)) {
             std::cout << line << std::endl;
         }
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ ÷òåíèÿ." << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ." << std::endl;
     }
 }
 
@@ -39,11 +39,11 @@ void appendToFile(const std::string& fileName, const std::string& content) {
 
     if (file.is_open()) {
         file << content << std::endl;
-        std::cout << "Äàííûå óñïåøíî äîáàâëåíû â êîíåö ôàéëà " << fileName << "." << std::endl;
+        std::cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ñ‹ Ð² ÐºÐ¾Ð½ÐµÑ† Ñ„Ð°Ð¹Ð»Ð° " << fileName << "." << std::endl;
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ äîáàâëåíèÿ äàííûõ." << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ…." << std::endl;
     }
 }
 
@@ -63,7 +63,7 @@ std::vector<int> readNumbersFromFile(const std::string& fileName) {
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ ÷òåíèÿ ÷èñåë." << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ Ñ‡Ð¸ÑÐµÐ»." << std::endl;
     }
 
     return numbers;
@@ -73,7 +73,7 @@ void replaceNegativeWithSquareOfMin(const std::string& fileName) {
     std::vector<int> numbers = readNumbersFromFile(fileName);
 
     if (numbers.empty()) {
-        std::cerr << "Ôàéë íå ñîäåðæèò ÷èñåë." << std::endl;
+        std::cerr << "Ð¤Ð°Ð¹Ð» Ð½Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ‡Ð¸ÑÐµÐ»." << std::endl;
         return;
     }
 
@@ -88,10 +88,10 @@ void replaceNegativeWithSquareOfMin(const std::string& fileName) {
             }
             file << number << " ";
         }
-        std::cout << "Îòðèöàòåëüíûå ÷èñëà óñïåøíî çàìåíåíû â ôàéëå " << fileName << "." << std::endl;
+        std::cout << "ÐžÑ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ‡Ð¸ÑÐ»Ð° ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð¼ÐµÐ½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð»Ðµ " << fileName << "." << std::endl;
         file.close();
     }
     else {
-        std::cerr << "Îøèáêà ïðè îòêðûòèè ôàéëà äëÿ çàìåíû îòðèöàòåëüíûõ ÷èñåë." << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð° Ð´Ð»Ñ Ð·Ð°Ð¼ÐµÐ½Ñ‹ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ñ‡Ð¸ÑÐµÐ»." << std::endl;
     }
 }
