@@ -1,4 +1,4 @@
-﻿#include "file_operations.h"
+#include "file_operations.h"
 
 #include <iostream>
 #include <fstream>
@@ -7,14 +7,12 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
-	setlocale(LC_ALL, "Russian");
+    setlocale(LC_ALL, "Russian");
 
     while (true)
     {
-
-
 
         cout << "Меню:" << endl;
         cout << "1. Создать файл" << endl;
@@ -28,61 +26,57 @@ int main()
         cin >> choice;
         cout << endl;
 
-		system("cls");
+        system("cls");
 
         switch (choice)
         {
-            case 1:
-            {
-                cout << "Введите название файла: ";
-                string fileName;
-                cin >> fileName;
-                cout << endl;
-                createFile(fileName);
-                break;
+        case 1:
+        {
+            cout << "Введите название файла: ";
+            string fileName;
+            cin >> fileName;
+            cout << endl;
+            createFile(fileName);
+            break;
+        }
+        case 2:
+        {
+            cout << "Введите название файла: ";
+            string fileName;
+            cin >> fileName;
+            cout << endl;
+            printFile(fileName);
+            break;
+        }
+        case 3:
+        {
+            cout << "Введите название файла: ";
+            string fileName;
+            cin >> fileName;
+            cout << endl;
 
-            }
-            case 2:
-            {
-                cout << "Введите название файла: ";
-                string fileName;
-                cin >> fileName;
-                cout << endl;
-                printFile(fileName);
-                break;
-            }
-            case 3:
-            {
-                cout << "Введите название файла: ";
-                string fileName;
-                cin >> fileName;
-                cout << endl;
-
-                cout << "Введите данные для добавления в конец файла:";
-                cin.ignore();
-                string additionalContent;
-                getline(cin, additionalContent);
-                appendToFile(fileName, additionalContent);
-				break;
-            }
-            case 4:
-            {
-                cout << "Введите название файла: ";
-                string fileName;
-                cin >> fileName;
-                cout << endl;
-                replaceNegativeWithSquareOfMin(fileName);
-                cout << "Результат замены отрицательных чисел на квадрат самого маленького числа" << endl;
-                printFile(fileName);
-                break;
-            }
-            case 5:
-            {
-                return 0;
-            }
+            cout << "Введите данные для добавления в конец файла:";
+            cin.ignore();
+            string additionalContent;
+            getline(cin, additionalContent);
+            appendToFile(fileName, additionalContent);
+            break;
+        }
+        case 4:
+        {
+            cout << "Введите название файла: ";
+            string fileName;
+            cin >> fileName;
+            cout << endl;
+            replaceNegativeWithSquareOfMin(fileName);
+            cout << "Результат замены отрицательных чисел на квадрат самого маленького числа" << endl;
+            printFile(fileName);
+            break;
+        }
+        case 5:
+        {
+            return 0;
+        }
         }
     }
-    
-
-    
 }
